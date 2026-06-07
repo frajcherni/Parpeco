@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parpeco | Contact - Nous contacter pour un devis</title>
+  <meta name="description" content="Contactez Parpeco pour un devis ou renseignement sur nos matériaux écologiques. Route de Tunis Dhehari 8020 SOLIMAN, Tunisie.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./parpeco-theme.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-social">
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="top-contact">
+      <i class="fas fa-envelope"></i> <a href="mailto:parpeco@gmail.com">parpeco@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<div class="main-header">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="Parpeco _ Accueil.html" class="logo-area">
+        <span class="logo-img-wrap">
+          <img class="logo-img" src="./assets/Parpeco-01.png" alt="Parpeco">
+        </span>
+        <div class="logo-text">
+          <strong>Parpeco</strong>
+          <small>MATÉRIAUX ÉCOLOGIQUES</small>
+        </div>
+      </a>
+      <div class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="Parpeco _ Accueil.html" data-i18n="header-accueil">Accueil</a></li>
+          <li><a href="Parpeco _ Â propos.html" data-i18n="header-apropos">À propos</a></li>
+          <li><a href="Parpeco _ Développement Durable.html" data-i18n="header-durable">Développement Durable</a></li>
+          <li class="dropdown">
+            <a href="#" data-i18n="header-produit">Produit</a>
+            <ul class="submenu">
+              <li><a href="Parpeco _ Les Avantages du produit.html" data-i18n="header-avantages">Avantages du produit</a></li>
+              <li><a href="Parpeco _ Produit.html" data-i18n="header-nos-produits">Nos produits</a></li>
+            </ul>
+          </li>
+          <li><a href="Parpeco _ Services.html" data-i18n="header-services">Services</a></li>
+          <li><a href="Parpeco _ Contact.html" data-i18n="header-contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="lang-trigger"><img class="lang-flag" src="./Parpeco _ Contact_files/icons8-france-circulaire-48.png" alt="fr"><span>FR</span></a>
+            <ul class="submenu lang-menu">
+              <li><a href="#" onclick="switchLang('fr')">🇫🇷 Français</a></li>
+              <li><a href="#" onclick="switchLang('en')">🇬🇧 English</a></li>
+              <li><a href="#" onclick="switchLang('ar')">🇹🇳 العربية</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <h1>Nous contacter</h1>
+    <p>Nous sommes à votre disposition pour répondre à toutes vos questions</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM & INFO -->
+<section style="background: #F0FDF4; padding: 70px 0;">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+      <div style="flex: 1; background: white; border-radius: 28px; padding: 32px;">
+<h3 style="margin-bottom: 20px;"><i class="fas fa-map-pin" style="color: #16A34A; margin-right: 10px;"></i> <span data-i18n="footer-contact">Coordonnées</span></h3>
+        <img src="./Parpeco _ Contact_files/Parpeco-01.png" alt="Logo Parpeco Contact" style="width: 150px; height: auto; margin-bottom: 20px;">
+        <div style="margin-bottom: 30px;">
+          <h4 style="color: #16A34A; margin-bottom: 8px;">Email</h4>
+          <p><a href="mailto:parpeco@gmail.com" style="color: #16A34A; text-decoration: none; font-weight: 600;">parpeco@gmail.com</a></p>
+        </div>
+        <div style="margin-bottom: 30px;">
+          <h4 style="color: #16A34A; margin-bottom: 8px;">Téléphone</h4>
+          <p style="color: #5C6659;">+216 29 787 375</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: #16A34A; margin-bottom: 8px;">WhatsApp</h4>
+          <p style="color: #5C6659;">+216 29 787 375</p>
+        </div>
+      </div>
+      <div style="flex: 1.5; background: white; border-radius: 28px; padding: 32px;">
+        <h3 style="margin-bottom: 20px;"><i class="fas fa-paper-plane" style="color: #16A34A; margin-right: 10px;"></i> Formulaire de Contact</h3>
+        <form id="contactForm" action="#" method="post">
+          <div style="display: grid; gap: 16px;">
+            <div>
+              <label style="display: block; margin-bottom: 6px; color: #16A34A; font-weight: 600;">Nom complet *</label>
+              <input type="text" placeholder="Votre nom" required style="width: 100%; padding: 12px; border-radius: 40px; border: 1px solid #D1FAE5; font-family: inherit;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 6px; color: #16A34A; font-weight: 600;">Email *</label>
+              <input type="email" placeholder="votre@email.com" required style="width: 100%; padding: 12px; border-radius: 40px; border: 1px solid #D1FAE5; font-family: inherit;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 6px; color: #16A34A; font-weight: 600;">Téléphone</label>
+              <input type="tel" placeholder="+216 XX XXX XXX" style="width: 100%; padding: 12px; border-radius: 40px; border: 1px solid #D1FAE5; font-family: inherit;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 6px; color: #16A34A; font-weight: 600;">Sujet</label>
+              <select style="width: 100%; padding: 12px; border-radius: 40px; border: 1px solid #D1FAE5; font-family: inherit;">
+                <option>Demande de devis</option>
+                <option>Renseignements produits</option>
+                <option>Partenariat</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 6px; color: #16A34A; font-weight: 600;">Message *</label>
+              <textarea rows="5" placeholder="Votre message..." required style="width: 100%; padding: 12px; border-radius: 24px; border: 1px solid #D1FAE5; font-family: inherit; resize: none;"></textarea>
+            </div>
+            <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Envoyer le message</button>
+          </div>
+        </form>
+        <p style="font-size: 0.75rem; margin-top: 16px; color: #999;">* Champs obligatoires. Nos équipes vous répondent sous 24h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO SUPPLÉMENTAIRE -->
+<section style="padding: 70px 0;">
+  <div class="container">
+    <div class="section-title">
+<h2 data-i18n="footer-opening-hours">Horaires d'ouverture</h2>
+      <div class="green-line"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+      <div style="background: #F0FDF4; padding: 30px; border-radius: 20px; border-left: 4px solid #4ADE80;">
+        <h4 style="color: #16A34A; margin-bottom: 15px;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i>Semaine</h4>
+        <p style="color: #5C6659; margin-bottom: 8px;"><strong>Lundi - Vendredi :</strong> 08:00 - 17:00</p>
+        <p style="color: #5C6659;"><strong>Samedi :</strong> 09:00 - 13:00</p>
+      </div>
+      <div style="background: #F0FDF4; padding: 30px; border-radius: 20px; border-left: 4px solid #4ADE80;">
+        <h4 style="color: #16A34A; margin-bottom: 15px;"><i class="fas fa-phone" style="margin-right: 10px;"></i>Urgences</h4>
+        <p style="color: #5C6659; margin-bottom: 8px;"><strong>Disponible :</strong> 24h/24</p>
+        <p style="color: #5C6659;"><strong>Via :</strong> WhatsApp ou Email</p>
+      </div>
+      <div style="background: #F0FDF4; padding: 30px; border-radius: 20px; border-left: 4px solid #4ADE80;">
+        <h4 style="color: #16A34A; margin-bottom: 15px;"><i class="fas fa-headset" style="margin-right: 10px;"></i>Support Technique</h4>
+        <p style="color: #5C6659; margin-bottom: 8px;"><strong>Disponible :</strong> Lun-Ven 08:00-17:00</p>
+        <p style="color: #5C6659;"><strong>Email :</strong>  parpeco@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo-area">
+          <span class="logo-img-wrap"><img class="footer-logo" src="./assets/Parpeco-01.png" alt="Parpeco"></span>
+          <div class="logo-text">
+            <strong data-i18n="footer-parpeco">Parpeco</strong>
+            <small data-i18n="footer-logo-tagline">MATÉRIAUX ÉCOLOGIQUES</small>
+          </div>
+        </div>
+        <p style="text-align: justify;" data-i18n="footer-paragraph">Notre priorité est la satisfaction de nos clients. Nous établissons des relations de partenariat basées sur la confiance et la transparence.</p>
+        <ul class="footer-check-list">
+          <li><i class="fa fa-check"></i> <span data-i18n="footer-check-1">Construire vert, bâtir l'avenir.</span></li>
+          <li><i class="fa fa-check"></i> <span data-i18n="footer-check-2">Des parpaings écologiques pour un monde durable.</span></li>
+          <li><i class="fa fa-check"></i> <span data-i18n="footer-check-3">Solidité et écologie, main dans la main.</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-liens">LIENS RAPIDES</h4>
+        <p><a href="Parpeco _ Accueil.html" data-i18n="header-accueil">Accueil</a></p>
+        <p><a href="Parpeco _ Â propos.html" data-i18n="header-apropos">À propos</a></p>
+        <p><a href="Parpeco _ Services.html" data-i18n="header-services">Services</a></p>
+        <p><a href="Parpeco _ Produit.html" data-i18n="header-nos-produits">Les Produits</a></p>
+        <p><a href="Parpeco _ Les Avantages du produit.html" data-i18n="header-avantages">Les Avantages</a></p>
+        <p><a href="Parpeco _ Contact.html" data-i18n="header-contact">Contact</a></p>
+        <p><a href="Parpeco _ Développement Durable.html" data-i18n="header-durable">Développement Durable</a></p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-contact">INFORMATIONS DE CONTACT</h4>
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-envelope"></i> <a href="mailto:parpeco@gmail.com">parpeco@gmail.com</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="#" aria-label="WhatsApp" data-i18n="footer-social-whatsapp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook" data-i18n="footer-social-facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer-legal-link-legal">LEGAL</a> |
+          <a href="#" data-i18n="footer-legal-link-cgv">CGV</a> |
+          <a href="#" data-i18n="footer-legal-link-reglement">RÈGLEMENT</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" data-i18n="footer-copy">© 2026 Parpeco - Tous droits réservés. Bâtir l'écologie, ensemble.</div>
+  </div>
+</footer>
+
+<script>
+  const toggleBtn = document.getElementById('mobileToggle');
+  const mainNav = document.getElementById('mainNav');
+  if(toggleBtn && mainNav) {
+    toggleBtn.addEventListener('click', () => { mainNav.classList.toggle('open'); });
+  }
+
+  const translations = {
+    'Nous contacter': { en: 'Contact us', ar: 'اتصل بنا' },
+    'Nous sommes à votre disposition pour répondre à toutes vos questions': { en: 'We are at your disposal to answer all your questions', ar: 'نحن في خدمتك للإجابة على جميع أسئلتك' },
+    'Coordonnées': { en: 'Contact Info', ar: 'معلومات الاتصال' },
+    'Adresse': { en: 'Address', ar: 'العنوان' },
+    'Formulaire de Contact': { en: 'Contact Form', ar: 'نموذج الاتصال' },
+    'Nom complet *': { en: 'Full name *', ar: 'الاسم الكامل *' },
+    'Email *': { en: 'Email *', ar: 'البريد الإلكتروني *' },
+    'Sujet': { en: 'Subject', ar: 'الموضوع' },
+    'Demande de devis': { en: 'Quote request', ar: 'طلب عرض سعر' },
+    'Renseignements produits': { en: 'Product information', ar: 'معلومات المنتج' },
+    'Partenariat': { en: 'Partnership', ar: 'الشراكة' },
+    'Autre': { en: 'Other', ar: 'أخرى' },
+    'Message *': { en: 'Message *', ar: 'الرسالة *' },
+    'Envoyer le message': { en: 'Send message', ar: 'إرسال الرسالة' },
+    'Horaires d\'ouverture': { en: 'Opening hours', ar: 'ساعات العمل' },
+    'Semaine': { en: 'Weekdays', ar: 'أيام الأسبوع' },
+    'Lundi - Vendredi :': { en: 'Monday - Friday:', ar: 'الاثنين - الجمعة:' },
+    '08:00 - 17:00': { en: '08:00 - 17:00', ar: '08:00 - 17:00' },
+    'Samedi :': { en: 'Saturday:', ar: 'السبت:' },
+    '09:00 - 13:00': { en: '09:00 - 13:00', ar: '09:00 - 13:00' },
+    'Urgences': { en: 'Emergencies', ar: 'الحالات الطارئة' },
+    '24h/24': { en: '24/7', ar: '24/7' },
+    'WhatsApp ou Email': { en: 'WhatsApp or Email', ar: 'واتس آب أو البريد الإلكتروني' },
+    'Support Technique': { en: 'Technical Support', ar: 'الدعم الفني' },
+    'Lun-Ven 08:00-17:00': { en: 'Mon-Fri 08:00-17:00', ar: 'الاثنين-الجمعة 08:00-17:00' },
+    'header-accueil': { en: 'Home', ar: 'الصفحة الرئيسية' },
+    'header-apropos': { en: 'About', ar: 'من نحن' },
+    'header-durable': { en: 'Sustainability', ar: 'التنمية المستدامة' },
+    'header-produit': { en: 'Product', ar: 'المنتج' },
+    'header-avantages': { en: 'Product Benefits', ar: 'مزايا المنتج' },
+    'header-nos-produits': { en: 'Our Products', ar: 'منتجاتنا' },
+    'header-services': { en: 'Services', ar: 'الخدمات' },
+    'header-contact': { en: 'Contact', ar: 'اتصل بنا' },
+
+    // Footer
+    'footer-parpeco': { en: 'Parpeco', ar: 'Parpeco' },
+    'footer-logo-tagline': { en: 'ECOLOGICAL MATERIALS', ar: 'مُواد بيئية' },
+    'footer-paragraph': { en: 'Our priority is customer satisfaction. We build partnership relationships based on trust and transparency.', ar: 'أولوية Parpeco هي رضا عملائنا. نحن نبني علاقات شراكة قائمة على الثقة والشفافية.' },
+    'footer-check-1': { en: 'Build green, shape the future.', ar: 'بنِ أخضر… واصنع المستقبل.' },
+    'footer-check-2': { en: 'Eco-friendly blocks for a sustainable world.', ar: 'بلوكات بيئية لعالم مستدام.' },
+    'footer-check-3': { en: 'Strength and ecology, side by side.', ar: 'متانة وبيئة معاً، جنباً إلى جنب.' },
+    'footer-liens': { en: 'Quick Links', ar: 'روابط سريعة' },
+    'footer-contact': { en: 'Contact information', ar: 'معلومات الاتصال' },
+    'footer-contact-address': { en: 'Route de Tunis Dhehari 8020 SOLIMAN', ar: 'Route de Tunis Dhehari 8020 SOLIMAN' },
+    'footer-social-whatsapp': { en: 'WhatsApp', ar: 'واتساب' },
+    'footer-social-facebook': { en: 'Facebook', ar: 'فيسبوك' },
+    'footer-legal-link-legal': { en: 'LEGAL', ar: 'قانوني' },
+    'footer-legal-link-cgv': { en: 'Terms', ar: 'الشروط' },
+    'footer-legal-link-reglement': { en: 'POLICY', ar: 'اللوائح' },
+    'footer-copy': { en: '© 2026 Parpeco - All rights reserved. Building ecology, together.', ar: '© 2026 Parpeco - جميع الحقوق محفوظة. نبني البيئة معاً.' }
+  };
+
+  function getTranslation(key, lang) {
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      return translations[lang][key];
+    }
+    if (translations[key] && translations[key][lang] !== undefined) {
+      return translations[key][lang];
+    }
+    return null;
+  }
+
+  function translateNode(node, lang) {
+    if (node.nodeType === 3) { // Text node
+      const text = node.textContent.trim();
+      if (text) {
+        if (node.originalText === undefined) {
+          node.originalText = node.textContent;
+        }
+        const origTextTrimmed = node.originalText.trim();
+        const val = getTranslation(origTextTrimmed, lang);
+        if (val !== null) {
+          const leadingWs = node.originalText.match(/^\s*/)[0];
+          const trailingWs = node.originalText.match(/\s*$/)[0];
+          node.textContent = leadingWs + val + trailingWs;
+        } else if (lang === 'fr') {
+          node.textContent = node.originalText;
+        }
+      }
+    } else if (node.nodeType === 1) { // Element node
+      // Handle data-i18n
+      if (node.hasAttribute('data-i18n')) {
+        const key = node.getAttribute('data-i18n');
+        if (node.originalText === undefined) {
+          node.originalText = node.textContent;
+        }
+        if (node.originalAlt === undefined && node.tagName === 'IMG') {
+          node.originalAlt = node.getAttribute('alt') || '';
+        }
+        
+        const val = getTranslation(key, lang);
+        if (val !== null) {
+          if (node.tagName === 'IMG') {
+            node.setAttribute('alt', val);
+          } else {
+            node.textContent = val;
+          }
+        } else if (lang === 'fr') {
+          if (node.tagName === 'IMG') {
+            node.setAttribute('alt', node.originalAlt);
+          } else {
+            node.textContent = node.originalText;
+          }
+        }
+        return; // Skip translating children for data-i18n elements
+      }
+
+      // Handle placeholder
+      if (node.hasAttribute('placeholder')) {
+        const placeholder = node.getAttribute('placeholder');
+        if (node.originalPlaceholder === undefined) {
+          node.originalPlaceholder = placeholder;
+        }
+        const origPlaceholderTrimmed = node.originalPlaceholder.trim();
+        const val = getTranslation(origPlaceholderTrimmed, lang);
+        if (val !== null) {
+          node.setAttribute('placeholder', val);
+        } else if (lang === 'fr') {
+          node.setAttribute('placeholder', node.originalPlaceholder);
+        }
+      }
+
+      // Handle image alt (if not using data-i18n)
+      if (node.tagName === 'IMG' && node.hasAttribute('alt')) {
+        const alt = node.getAttribute('alt');
+        if (node.originalAlt === undefined) {
+          node.originalAlt = alt;
+        }
+        const origAltTrimmed = node.originalAlt.trim();
+        const val = getTranslation(origAltTrimmed, lang);
+        if (val !== null) {
+          node.setAttribute('alt', val);
+        } else if (lang === 'fr') {
+          node.setAttribute('alt', node.originalAlt);
+        }
+      }
+
+      // Recurse children
+      for (let child of node.childNodes) {
+        translateNode(child, lang);
+      }
+    }
+  }
+
+  function updateLangTrigger(lang) {
+    const triggerImg = document.querySelector('.lang-trigger img');
+    const triggerSpan = document.querySelector('.lang-trigger span');
+    if (triggerImg && triggerSpan) {
+      const currentSrc = triggerImg.getAttribute('src');
+      if (currentSrc) {
+        const parts = currentSrc.split('/');
+        if (lang === 'fr') {
+          parts[parts.length - 1] = 'icons8-france-circulaire-48.png';
+          triggerSpan.textContent = 'FR';
+        } else if (lang === 'en') {
+          parts[parts.length - 1] = 'icons8-angleterre-circulaire-48.png';
+          triggerSpan.textContent = 'EN';
+        } else if (lang === 'ar') {
+          parts[parts.length - 1] = 'icons8-tunisie-circulaire-48.png';
+          triggerSpan.textContent = 'AR';
+        }
+        triggerImg.setAttribute('src', parts.join('/'));
+      }
+    }
+  }
+
+  function applyTranslation(lang) {
+    const body = document.body;
+    translateNode(body, lang);
+    
+    document.documentElement.lang = lang;
+    if (lang === 'ar') {
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.documentElement.dir = 'ltr';
+    }
+    
+    updateLangTrigger(lang);
+    localStorage.setItem('lang', lang);
+  }
+
+  window.switchLang = function(lang) {
+    applyTranslation(lang);
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'fr';
+    applyTranslation(savedLang);
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.');
+      contactForm.reset();
+    });
+  }
+</script>
+</body>
+</html>
+

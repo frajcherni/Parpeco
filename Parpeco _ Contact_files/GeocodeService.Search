@@ -1,0 +1,165 @@
+/**/_xdc_._qt9464 && _xdc_._qt9464( {
+   "results" : 
+   [
+      {
+         "address_components" : 
+         [
+            {
+               "long_name" : "Dong Xoai",
+               "short_name" : "Dong Xoai",
+               "types" : 
+               [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Dong Nai",
+               "short_name" : "Dong Nai",
+               "types" : 
+               [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Vietnam",
+               "short_name" : "VN",
+               "types" : 
+               [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address" : "Dong Xoai, Dong Nai, Vietnam",
+         "geometry" : 
+         {
+            "bounds" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 11.570017,
+                  "lng" : 106.893275
+               },
+               "southwest" : 
+               {
+                  "lat" : 11.481051,
+                  "lng" : 106.755086
+               }
+            },
+            "location" : 
+            {
+               "lat" : 11.5375007,
+               "lng" : 106.8060388
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 11.570017,
+                  "lng" : 106.893275
+               },
+               "southwest" : 
+               {
+                  "lat" : 11.481051,
+                  "lng" : 106.755086
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "ChIJCSx4PyundDERgW36a5TzIsM",
+         "types" : 
+         [
+            "locality",
+            "political"
+         ]
+      },
+      {
+         "address_components" : 
+         [
+            {
+               "long_name" : "Binh Phuoc",
+               "short_name" : "Binh Phuoc",
+               "types" : 
+               [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Binh Phuoc",
+               "short_name" : "Binh Phuoc",
+               "types" : 
+               [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Dong Nai",
+               "short_name" : "Dong Nai",
+               "types" : 
+               [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name" : "Vietnam",
+               "short_name" : "VN",
+               "types" : 
+               [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address" : "Binh Phuoc, Dong Nai, Vietnam",
+         "geometry" : 
+         {
+            "bounds" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 11.57724,
+                  "lng" : 106.9330431
+               },
+               "southwest" : 
+               {
+                  "lat" : 11.461055,
+                  "lng" : 106.79704
+               }
+            },
+            "location" : 
+            {
+               "lat" : 11.5099618,
+               "lng" : 106.9004472
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 11.57724,
+                  "lng" : 106.9330431
+               },
+               "southwest" : 
+               {
+                  "lat" : 11.461055,
+                  "lng" : 106.79704
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "ChIJTydOrfKhdDERd864twP8qzU",
+         "types" : 
+         [
+            "administrative_area_level_2",
+            "political"
+         ]
+      }
+   ],
+   "status" : "OK"
+} )
