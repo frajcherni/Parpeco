@@ -124,10 +124,15 @@
           event.target.playVideo();
           if (soundOn) {
             event.target.unMute();
-          } else {
-            event.target.mute();
           }
           updateSoundButton();
+
+          setTimeout(() => {
+            if (heroPlayer && heroPlayer.isMuted() && soundOn) {
+              soundOn = false;
+              updateSoundButton();
+            }
+          }, 1200);
         },
       },
     });
@@ -137,11 +142,8 @@
     soundBtn.addEventListener('click', () => {
       if (!heroPlayer) return;
       soundOn = !soundOn;
-      if (soundOn) {
-        heroPlayer.unMute();
-      } else {
-        heroPlayer.mute();
-      }
+      heroPlayer[ soundOn ? 'unMute' : 'mute' ]();
+      heroPlayer.playVideo();
       updateSoundButton();
     });
   }
