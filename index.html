@@ -102,51 +102,48 @@
 <script>
   let heroPlayer;
   const soundBtn = document.getElementById('hero-sound-toggle');
-  let soundOn = true;
+  let isMuted = true; // always start muted — guaranteed autoplay
 
   function updateSoundButton() {
     if (!soundBtn) return;
-    soundBtn.textContent = soundOn ? 'Couper le son' : 'Activer le son';
+    soundBtn.innerHTML = isMuted
+      ? '<i class="fas fa-volume-mute" style="margin-right:6px;"></i> Activer le son'
+      : '<i class="fas fa-volume-up" style="margin-right:6px;"></i> Couper le son';
   }
 
   function onYouTubeIframeAPIReady() {
     heroPlayer = new YT.Player('hero-video-iframe', {
-      playerVars: {
-        autoplay: 1,
-        loop: 1,
-        playlist: 'cRkhPONUaYg',
-        playsinline: 1,
-        controls: 0,
-        mute: 1,
-      },
       events: {
-        onReady: (event) => {
-          event.target.playVideo();
-          if (soundOn) {
-            event.target.unMute();
-          }
+        onReady: function(event) {
+          event.target.mute();       // explicitly mute first
+          event.target.playVideo();  // this ALWAYS works when muted
           updateSoundButton();
-
-          setTimeout(() => {
-            if (heroPlayer && heroPlayer.isMuted() && soundOn) {
-              soundOn = false;
-              updateSoundButton();
-            }
-          }, 1200);
         },
-      },
+        onStateChange: function(event) {
+          // If video stops (e.g. network), restart it
+          if (event.data === YT.PlayerState.ENDED) {
+            event.target.playVideo();
+          }
+        }
+      }
     });
   }
 
   if (soundBtn) {
-    soundBtn.addEventListener('click', () => {
+    soundBtn.addEventListener('click', function() {
       if (!heroPlayer) return;
-      soundOn = !soundOn;
-      heroPlayer[ soundOn ? 'unMute' : 'mute' ]();
-      heroPlayer.playVideo();
+      isMuted = !isMuted;
+      if (isMuted) {
+        heroPlayer.mute();
+      } else {
+        heroPlayer.unMute();
+        heroPlayer.setVolume(80);
+      }
       updateSoundButton();
     });
   }
+
+  updateSoundButton(); // set initial button text on load
 </script>
 
 <!-- NOTRE VISION -->
