@@ -76,13 +76,17 @@
 <!-- HERO / ACCUEIL -->
 <section id="accueil" class="hero" style="position: relative; overflow: hidden; padding: 0; height: 100vh; width: 100vw; display: flex; align-items: center;">
 <iframe
+  id="hero-video-iframe"
   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"
-  src="https://www.youtube.com/embed/cRkhPONUaYg?autoplay=1&loop=1&playlist=cRkhPONUaYg&mute=1&playsinline=1&controls=0"
+  src="https://www.youtube.com/embed/cRkhPONUaYg?autoplay=1&loop=1&playlist=cRkhPONUaYg&playsinline=1&controls=0&enablejsapi=1"
   frameborder="0"
   allow="autoplay; encrypted-media; picture-in-picture"
   allowfullscreen>
 </iframe>
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 95, 70, 0.55); z-index: 1;"></div>
+  <button id="hero-sound-toggle" type="button" class="btn btn-outline-light" style="position: absolute; top: 24px; right: 24px; z-index: 3; min-width: 170px;">
+    Activer le son
+  </button>
   <div class="container" style="position: relative; z-index: 2; padding: 80px 24px;">
     <div style="max-width: 700px;">
       <h1 data-i18n="hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #fff;">Bienvenue dans l'avenir de la construction durable</h1>
@@ -94,6 +98,40 @@
     </div>
   </div>
 </section>
+<script>
+  const ytIframe = document.getElementById('hero-video-iframe');
+  const soundBtn = document.getElementById('hero-sound-toggle');
+  let soundOn = false;
+
+  function postYTCommand(func, args = []) {
+    if (!ytIframe || !ytIframe.contentWindow) return;
+    ytIframe.contentWindow.postMessage(JSON.stringify({
+      event: 'command',
+      func,
+      args,
+    }), '*');
+  }
+
+  function updateSoundButton() {
+    if (!soundBtn) return;
+    soundBtn.textContent = soundOn ? 'Couper le son' : 'Activer le son';
+  }
+
+  if (soundBtn) {
+    soundBtn.addEventListener('click', () => {
+      soundOn = !soundOn;
+      if (soundOn) {
+        postYTCommand('unMute');
+        postYTCommand('playVideo');
+      } else {
+        postYTCommand('mute');
+      }
+      updateSoundButton();
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', updateSoundButton);
+</script>
 
 <!-- NOTRE VISION -->
 <section style="padding: 70px 0;">
