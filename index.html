@@ -75,22 +75,22 @@
 
 <!-- HERO / ACCUEIL -->
 <section id="accueil" class="hero" style="position: relative; overflow: hidden; padding: 0; height: 100vh; width: 100vw; display: flex; align-items: center;">
-<iframe
-  id="hero-video-iframe"
-  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"
-  src="https://www.youtube.com/embed/cRkhPONUaYg?autoplay=1&loop=1&playlist=cRkhPONUaYg&mute=1&playsinline=1&controls=0&enablejsapi=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media; picture-in-picture"
-  allowfullscreen>
-</iframe>
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 95, 70, 0.55); z-index: 1;"></div>
-  <button id="hero-sound-toggle" type="button" class="btn btn-outline-light" style="position: absolute; top: 24px; right: 24px; z-index: 3; min-width: 170px;">
-    Activer le son
+
+  <div id="hero-video-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;">
+    <div id="hero-yt-player" style="position: absolute; top: 50%; left: 50%; width: 177.78vh; min-width: 100%; height: 56.25vw; min-height: 100%; transform: translate(-50%, -50%);"></div>
+  </div>
+
+  <div id="hero-overlay-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(6, 95, 70, 0.55); z-index: 1;"></div>
+
+  <button id="hero-sound-toggle" type="button" class="btn btn-outline-light"
+    style="position: absolute; top: 24px; right: 24px; z-index: 3; min-width: 170px;">
+    <i class="fas fa-volume-mute" style="margin-right: 6px;"></i> Activer le son
   </button>
-  <div class="container" style="position: relative; z-index: 2; padding: 80px 24px;">
+
+  <div id="hero-overlay-text" class="container" style="position: relative; z-index: 2; padding: 80px 24px;">
     <div style="max-width: 700px;">
       <h1 data-i18n="hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #fff;">Bienvenue dans l'avenir de la construction durable</h1>
-      <p data-i18n="hero-desc" style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 28px; color: #fff;">Ce projet repose sur l'utilisation de parpaings écologiques innovants, une solution polyvalente parfaitement adaptée aux secteurs industriel, agricole et urbain.</p>
+      <p data-i18n="hero-desc" style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 28px; color: #fff;">Ce projet repose sur l'utilisation de parpaings écologiques innovants...</p>
       <div>
         <a href="Parpeco _ Produit.html" class="btn" data-i18n="header-nos-produits">Nos produits</a>
         <a href="Parpeco _ Contact.html" class="btn btn-outline-light" data-i18n="hero-btn-quote">Devis gratuit</a>
@@ -100,50 +100,81 @@
 </section>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  let heroPlayer;
-  const soundBtn = document.getElementById('hero-sound-toggle');
-  let isMuted = true; // always start muted — guaranteed autoplay
+  var heroPlayer;
+  var playerReady = false;
+  var isMuted = true;
 
-  function updateSoundButton() {
-    if (!soundBtn) return;
-    soundBtn.innerHTML = isMuted
+  function updateBtn() {
+    var btn = document.getElementById('hero-sound-toggle');
+    if (!btn) return;
+    btn.innerHTML = isMuted
       ? '<i class="fas fa-volume-mute" style="margin-right:6px;"></i> Activer le son'
       : '<i class="fas fa-volume-up" style="margin-right:6px;"></i> Couper le son';
   }
 
+  // YouTube API calls this automatically when ready
   function onYouTubeIframeAPIReady() {
-    heroPlayer = new YT.Player('hero-video-iframe', {
+    heroPlayer = new YT.Player('hero-yt-player', {
+      videoId: 'cRkhPONUaYg',
+      playerVars: {
+        autoplay: 1,
+        loop: 1,
+        playlist: 'cRkhPONUaYg',
+        mute: 1,
+        controls: 0,
+        playsinline: 1,
+        disablekb: 1,
+        rel: 0,
+        modestbranding: 1
+      },
       events: {
-        onReady: function(event) {
-          event.target.mute();       // explicitly mute first
-          event.target.playVideo();  // this ALWAYS works when muted
-          updateSoundButton();
+        onReady: function(e) {
+          e.target.mute();
+          e.target.playVideo();
+          playerReady = true;
+          updateBtn();
         },
-        onStateChange: function(event) {
-          // If video stops (e.g. network), restart it
-          if (event.data === YT.PlayerState.ENDED) {
-            event.target.playVideo();
+        onStateChange: function(e) {
+          if (e.data === YT.PlayerState.ENDED || e.data === YT.PlayerState.PAUSED) {
+            e.target.playVideo();
           }
         }
       }
     });
   }
 
-  if (soundBtn) {
-    soundBtn.addEventListener('click', function() {
-      if (!heroPlayer) return;
-      isMuted = !isMuted;
-      if (isMuted) {
-        heroPlayer.mute();
-      } else {
-        heroPlayer.unMute();
-        heroPlayer.setVolume(80);
-      }
-      updateSoundButton();
-    });
+  document.getElementById('hero-sound-toggle').addEventListener('click', function() {
+    if (!heroPlayer || !playerReady) return;
+    isMuted = !isMuted;
+    if (isMuted) {
+      heroPlayer.mute();
+    } else {
+      heroPlayer.unMute();
+      heroPlayer.setVolume(80);
+      heroPlayer.playVideo(); // ensure still playing
+    }
+    updateBtn();
+  });
+
+  function hideHeroOverlay() {
+    var bg = document.getElementById('hero-overlay-bg');
+    var text = document.getElementById('hero-overlay-text');
+    if (bg) {
+      bg.style.transition = 'opacity 0.7s ease';
+      bg.style.opacity = '0';
+    }
+    if (text) {
+      text.style.transition = 'opacity 0.7s ease';
+      text.style.opacity = '0';
+      setTimeout(function() {
+        text.style.display = 'none';
+      }, 700);
+    }
   }
 
-  updateSoundButton(); // set initial button text on load
+  setTimeout(hideHeroOverlay, 4000);
+
+  updateBtn();
 </script>
 
 <!-- NOTRE VISION -->
