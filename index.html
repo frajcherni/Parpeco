@@ -116,11 +116,9 @@
     var off = document.getElementById('sound-icon-off');
     var on = document.getElementById('sound-icon-on');
     var label = document.getElementById('sound-label');
-    var btn = document.getElementById('sound-btn');
     if (off) off.style.display = isOn ? 'none' : '';
     if (on) on.style.display = isOn ? '' : 'none';
     if (label) label.textContent = isOn ? 'Couper le son' : 'Activer le son';
-    if (btn) btn.style.animation = isOn ? 'none' : 'soundPulse 1.8s ease-in-out infinite';
   }
 
   // Unmute the (already-playing) video. Called from a real user gesture,
@@ -342,13 +340,43 @@
 <section style="padding: 50px 0;">
   <div class="container">
     <div class="section-title"><h2 data-i18n="Réalisations récentes">Réalisations récentes</h2><div class="green-line"></div></div>
-    <div class="grid-3">
+    <div class="gallery-img-grid">
       <img src="./Parpeco _ Accueil_files/brique-chanvre-home-1250x600.jpeg" alt="Brique chanvre écologique" style="width:100%; border-radius: 24px; height: 220px; object-fit:cover;">
       <img src="./Parpeco _ Accueil_files/3715_z_cappotto5.jpg" alt="Bloc écologique Ytong" style="width:100%; border-radius: 24px; height: 220px; object-fit:cover;">
       <img src="./Parpeco _ Accueil_files/construction-du-soubassement-dun-mur-choisissez-bien-votre-bloc-dassise-en-beton-cellulaire.jpg" alt="Construction écologique" style="width:100%; border-radius: 24px; height: 220px; object-fit:cover;">
       <img src="./Parpeco _ Accueil_files/WhatsApp Image 2026-06-14 at 5.26.02 PM.jpeg" alt="Système de construction" style="width:100%; border-radius: 24px; height: 220px; object-fit:cover;">
       <img src="./Parpeco _ Accueil_files/AST2248918-XL.jpeg" alt="Installation bloc" style="width:100%; border-radius: 24px; height: 220px; object-fit:cover;">
       <img src="./Parpeco _ Accueil_files/f-800x533-s8.jpeg" alt="Projet construction" style="width:100%; border-radius: 24px; height: 220px; object-fit:cover;">
+    </div>
+
+    <div class="gallery-video-grid">
+      <div class="gallery-video-card">
+        <video controls>
+          <source src="./Parpeco _ Services_files/temoignage xpress FM.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+        <div class="gallery-video-caption">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-broadcast-tower" style="color: #16A34A; font-size: 1.1rem;"></i>
+            <strong data-i18n="Témoignage — Xpress FM">Témoignage — Xpress FM</strong>
+          </div>
+          <p data-i18n="Parpeco à l'antenne : notre passage sur Xpress FM">Parpeco à l'antenne : notre passage sur Xpress FM</p>
+        </div>
+      </div>
+
+      <div class="gallery-video-card">
+        <video controls>
+          <source src="./Parpeco _ Â propos_files/newvideo.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+        <div class="gallery-video-caption">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-video" style="color: #16A34A; font-size: 1.1rem;"></i>
+            <strong data-i18n="Vidéo Parpeco">Vidéo Parpeco</strong>
+          </div>
+          <p data-i18n="Découvrez en images notre savoir-faire et nos réalisations.">Découvrez en images notre savoir-faire et nos réalisations.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
